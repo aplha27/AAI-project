@@ -9,7 +9,7 @@
 
 > **Advanced AI / Agentic AI Capstone Project**  
 > **Industry Reference:** FRS Labs (Identity verification and automated fraud prevention for banks)  
-> **Specification:** Based on [ERP – Project Execution & Resource Plan](ERP%20–%20Project%20Execution%20&%20Resource%20Plan.pdf)
+
 
 ---
 
