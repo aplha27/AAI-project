@@ -5,6 +5,7 @@ __pycache__/
 
 # Large Raw Archives
 *.zip
+*.pdf
 
 # Temporary test images
 test_*.png
