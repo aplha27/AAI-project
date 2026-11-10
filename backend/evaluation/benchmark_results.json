@@ -1,0 +1,113 @@
+{
+  "execution_date": "2026-11-10 19:54:04",
+  "total_bundles_evaluated": 200,
+  "splits": {
+    "train": 140,
+    "val": 30,
+    "test": 30
+  },
+  "perception_comparison": {
+    "face_matching": {
+      "baseline_roc_auc": 0.3448,
+      "improved_roc_auc": 0.4483,
+      "far_at_threshold": 1.0,
+      "frr_at_threshold": 0.0345,
+      "operating_threshold": 0.7
+    },
+    "liveness_anti_spoof": {
+      "baseline_roc_auc": 0.5739,
+      "improved_roc_auc": 1.0
+    },
+    "audio_replay_detection": {
+      "baseline_roc_auc": 0.5,
+      "improved_roc_auc": 1.0
+    }
+  },
+  "agentic_performance": {
+    "overall_decision_accuracy": 0.925,
+    "overall_escalation_rate": 0.255,
+    "total_tool_calls_executed": 1250,
+    "tool_call_success_rate": 1.0,
+    "mean_steps_per_investigation": 6.25,
+    "category_breakdown": {
+      "genuine_clean": {
+        "count": 120,
+        "accuracy": 0.9333,
+        "escalation_rate": 0.0667
+      },
+      "genuine_poor_capture": {
+        "count": 30,
+        "accuracy": 1.0,
+        "escalation_rate": 0.0
+      },
+      "spoof": {
+        "count": 30,
+        "accuracy": 1.0,
+        "escalation_rate": 1.0
+      },
+      "mismatch": {
+        "count": 20,
+        "accuracy": 0.65,
+        "escalation_rate": 0.65
+      }
+    }
+  },
+  "latency_profile_ms": {
+    "mean": 40.02,
+    "p50": 47.56,
+    "p90": 54.0,
+    "p95": 56.03,
+    "p99": 59.04
+  },
+  "failure_analysis": {
+    "total_failures": 15,
+    "failure_rate": 0.075,
+    "failed_cases": [
+      {
+        "bundle_id": "BUNDLE-002",
+        "category": "genuine_clean",
+        "expected": "APPROVE",
+        "predicted": "MANUAL_REVIEW",
+        "risk_score": 0.5019,
+        "guardrail": "GUARDRAIL_IDENTITY_DISCREPANCY",
+        "rationale": "Identity discrepancy detected (Face similarity below acceptance threshold). Face similarity: 0.25. Escalated to human investigator for manual credential corroboration."
+      },
+      {
+        "bundle_id": "BUNDLE-008",
+        "category": "genuine_clean",
+        "expected": "APPROVE",
+        "predicted": "MANUAL_REVIEW",
+        "risk_score": 0.4422,
+        "guardrail": "GUARDRAIL_IDENTITY_DISCREPANCY",
+        "rationale": "Identity discrepancy detected (Face similarity below acceptance threshold). Face similarity: 0.31. Escalated to human investigator for manual credential corroboration."
+      },
+      {
+        "bundle_id": "BUNDLE-014",
+        "category": "mismatch",
+        "expected": "MANUAL_REVIEW",
+        "predicted": "APPROVE",
+        "risk_score": 0.0593,
+        "guardrail": null,
+        "rationale": "Candidate verified with high confidence. Straight-through approval granted."
+      },
+      {
+        "bundle_id": "BUNDLE-023",
+        "category": "mismatch",
+        "expected": "MANUAL_REVIEW",
+        "predicted": "APPROVE",
+        "risk_score": 0.0593,
+        "guardrail": null,
+        "rationale": "Candidate verified with high confidence. Straight-through approval granted."
+      },
+      {
+        "bundle_id": "BUNDLE-026",
+        "category": "genuine_clean",
+        "expected": "APPROVE",
+        "predicted": "MANUAL_REVIEW",
+        "risk_score": 0.3989,
+        "guardrail": "GUARDRAIL_IDENTITY_DISCREPANCY",
+        "rationale": "Identity discrepancy detected (Face similarity below acceptance threshold). Face similarity: 0.36. Escalated to human investigator for manual credential corroboration."
+      }
+    ]
+  }
+}

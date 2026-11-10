@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  ekyc-agent:
+    build: .
+    container_name: ekyc-verification-agent
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - LOG_LEVEL=info
+    volumes:
+      - ./backend/data/processed:/app/backend/data/processed
+      - ./backend/evaluation:/app/backend/evaluation
+    restart: unless-stopped
+

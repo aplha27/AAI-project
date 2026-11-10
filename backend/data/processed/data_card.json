@@ -1,0 +1,30 @@
+{
+  "dataset_name": "Multimodal eKYC Verification Benchmark from Kaggle Archives",
+  "version": "2.0.0",
+  "kaggle_sources": {
+    "lfw_faces": "archive.zip (Labeled Faces in the Wild, 1,680 identity pairs)",
+    "fsdd_audio": "archive (1).zip (Free Spoken Digit Dataset, 3,000 clips)",
+    "recaptured_docs": "archive (2).zip (Recaptured ID Documents)",
+    "anti_spoofing": "archive (3).zip (Live & presentation attack selfies)",
+    "synthetic_passports": "archive (4).zip (Turabbajeer synthetic passport catalog)"
+  },
+  "total_bundles": 200,
+  "splits": {
+    "train": 140,
+    "validation": 30,
+    "test": 30
+  },
+  "class_distribution": {
+    "genuine_clean": 120,
+    "genuine_poor_capture": 30,
+    "spoof": 30,
+    "mismatch": 20
+  },
+  "modalities": [
+    "RGB Vision: Real LFW biometric facial pairs",
+    "Acoustic Audio: Real 8kHz PCM spoken digit recordings from FSDD",
+    "Document Vision: Turabbajeer synthetic passport layouts & recaptured plastic glare",
+    "Structured Metadata: Session fingerprints & fraud syndicate tracking"
+  ],
+  "compliance": "Safe academic benchmarking; LFW used solely for identity pairs with synthetic generated document text."
+}
